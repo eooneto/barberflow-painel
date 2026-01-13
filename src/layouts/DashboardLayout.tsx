@@ -4,7 +4,8 @@ import { Scissors, LayoutDashboard, Calendar, Users, Settings, LogOut, Bell, Men
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Componente do Item do Menu
-const SidebarItem = ({ icon: Icon, label, path, active = false, onClick }: any) => (
+// Removi o 'path' de dentro das chaves { ... }
+const SidebarItem = ({ icon: Icon, label, active = false, onClick }: any) => (
   <motion.div 
     onClick={onClick}
     whileHover={{ x: 4, backgroundColor: "rgba(255,255,255,0.05)" }}

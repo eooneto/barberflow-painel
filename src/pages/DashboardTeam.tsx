@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Plus, User, Mail, Lock, Clock, Calendar, Shield, Check, X } from 'lucide-react';
+import { Plus, User, Mail, Lock, Clock, Calendar, Shield, Check } from 'lucide-react';
 import GlassModal from '../components/GlassModal';
 
 export default function DashboardTeam() {
