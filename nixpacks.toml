@@ -1,8 +1,15 @@
+# 1. Define o Node.js 22 (Compatível com Vite 6)
 [phases.setup]
 nixPkgs = ["nodejs_22"]
 
-[phases.build]
-cmds = ["npm install", "npm run build"]
+# 2. Instala dependências (Forçamos o 'install' normal para garantir que o Vite venha junto)
+[phases.install]
+cmds = ["npm install"]
 
-[phases.start]
-cmds = ["npm run preview -- --port 3000 --host"]
+# 3. Constrói o site
+[phases.build]
+cmds = ["npm run build"]
+
+# 4. Inicia o servidor (CORRIGIDO: Agora está na seção certa)
+[start]
+cmd = "npm run preview -- --port 3000 --host"
