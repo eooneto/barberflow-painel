@@ -1,17 +1,13 @@
-# 1. Define o Node.js 22
 [phases.setup]
 nixPkgs = ["nodejs_22"]
 
-# 2. Instalação (O PULO DO GATO ESTÁ AQUI)
-# O comando 'rm -f package-lock.json' apaga o arquivo de trava do Windows
-# O 'npm install' baixa as versões corretas para o Linux do servidor
 [phases.install]
-cmds = ["rm -f package-lock.json && npm install"]
+# ADICIONADO: 'rm -rf node_modules' para limpar cache antigo
+# ADICIONADO: '--force' para ignorar o erro de versão do Node e instalar o binário Linux na marra
+cmds = ["rm -rf node_modules package-lock.json && npm install --force"]
 
-# 3. Build
 [phases.build]
 cmds = ["npm run build"]
 
-# 4. Iniciar (Start)
 [start]
 cmd = "npm run preview -- --port 3000 --host"
