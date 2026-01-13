@@ -1,10 +1,8 @@
 [phases.setup]
-nixPkgs = ["nodejs_22"]
+nixPkgs = ["nodejs_20"]
 
 [phases.install]
-# ADICIONADO: 'rm -rf node_modules' para limpar cache antigo
-# ADICIONADO: '--force' para ignorar o erro de versão do Node e instalar o binário Linux na marra
-cmds = ["rm -rf node_modules package-lock.json && npm install --force"]
+cmds = ["npm install"]
 
 [phases.build]
 cmds = ["npm run build"]
