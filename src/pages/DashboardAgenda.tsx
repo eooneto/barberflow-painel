@@ -165,7 +165,9 @@ export default function DashboardAgenda() {
                         <div className="flex flex-col items-center justify-center min-w-[70px] border-r border-white/10 pr-4">
                             <Clock size={16} className="text-slate-400 mb-1"/>
                             <span className="text-xl font-bold text-white">
-                                {new Date(apt.date_time).toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'})}
+                                // Use getUTCHours para pegar o valor puro do banco sem conversão de fuso
+                                {new Date(apt.date_time).getUTCHours().toString().padStart(2, '0')}:
+                                {new Date(apt.date_time).getUTCMinutes().toString().padStart(2, '0')}
                             </span>
                         </div>
 
