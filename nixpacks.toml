@@ -1,15 +1,17 @@
-# 1. Define o Node.js 22 (Compatível com Vite 6)
+# 1. Define o Node.js 22
 [phases.setup]
 nixPkgs = ["nodejs_22"]
 
-# 2. Instala dependências (Forçamos o 'install' normal para garantir que o Vite venha junto)
+# 2. Instalação (O PULO DO GATO ESTÁ AQUI)
+# O comando 'rm -f package-lock.json' apaga o arquivo de trava do Windows
+# O 'npm install' baixa as versões corretas para o Linux do servidor
 [phases.install]
-cmds = ["npm install"]
+cmds = ["rm -f package-lock.json && npm install"]
 
-# 3. Constrói o site
+# 3. Build
 [phases.build]
 cmds = ["npm run build"]
 
-# 4. Inicia o servidor (CORRIGIDO: Agora está na seção certa)
+# 4. Iniciar (Start)
 [start]
 cmd = "npm run preview -- --port 3000 --host"
