@@ -6,8 +6,9 @@ import DashboardLayout from './layouts/DashboardLayout.tsx'
 import DashboardHome from './pages/DashboardHome.tsx'
 import DashboardServices from './pages/DashboardServices.tsx'
 import DashboardTeam from './pages/DashboardTeam.tsx'
-import DashboardClients from './pages/DashboardClients.tsx'; // <--- Importando a tela nova
-import DashboardAgenda from './pages/DashboardAgenda.tsx';
+import DashboardClients from './pages/DashboardClients.tsx'
+import DashboardAgenda from './pages/DashboardAgenda.tsx'
+import DashboardConfig from './pages/DashboardConfig.tsx'
 
 import './index.css'
 
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
            <Route path="equipe" element={<DashboardTeam />} />
            <Route path="clientes" element={<DashboardClients />} /> {/* <--- AQUI ESTÁ A ROTA CERTA */}
            <Route path="agenda" element={<DashboardAgenda />} />
+           <Route path="config" element={<DashboardConfig />} />
            
            {/* Rotas Placeholder (Ainda a fazer) */}
            <Route path="config" element={<div className="p-8 text-white">Em desenvolvimento...</div>} />
